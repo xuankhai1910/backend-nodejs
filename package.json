@@ -1,19 +1,24 @@
 {
-  "dependencies": {
-    "dotenv": "16.4.7",
-    "express": "5.0.1"
-  },
+  "name": "nodejs",
+  "version": "1.0.0",
   "type": "module",
-  "devDependencies": {
-    "@types/express": "5.0.0",
-    "@types/node": "22.10.7",
-    "tsx": "^4.21.0",
-    "typescript": "5.7.3"
-  },
   "main": "dist/app.js",
   "scripts": {
     "start": "node dist/app.js",
     "build": "tsc",
-    "dev": "tsx watch src/app.ts"
+    "dev": "tsx watch --inspect src/app.ts",
+    "start:debug": "nodemon --inspect=9229 -e ts,tsx --exec node -r ts-node/register ./src/app.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.19.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.3"
   }
 }
