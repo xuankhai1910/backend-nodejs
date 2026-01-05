@@ -8,7 +8,18 @@
     "strict": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "config/*": ["./src/config/*"],
+      "controllers/*": ["./src/controllers/*"],
+      "models/*": ["./src/models/*"],
+      "routes/*": ["./src/routes/*"],
+      "services/*": ["./src/services/*"]
+    }
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
